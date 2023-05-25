@@ -1,0 +1,94 @@
+<div id="ajax-page" class="ajax-page-content">
+        <div class="ajax-page-wrapper">
+                <div class="ajax-page-nav">
+                        <div class="nav-item ajax-page-prev-next">
+                                <a class="ajax-page-load" href="portfolio-1.html"><i class="lnr lnr-chevron-left"></i></a>
+                                <a class="ajax-page-load" href="portfolio-3.html"><i class="lnr lnr-chevron-right"></i></a>
+                        </div>
+                        <div class="nav-item ajax-page-close-button">
+                                <a id="ajax-page-close-button" href="#"><i class="lnr lnr-cross"></i></a>
+                        </div>
+                </div>
+
+                <div class="ajax-page-title">
+                        <h1>Moovax V2</h1>
+                </div>
+
+                <div class="row">
+                        <div class="col-sm-8 col-md-8 portfolio-block">
+                                <div class="owl-carousel portfolio-page-carousel">
+                                        <div class="item">
+                                                <img src="media/images/portfolio/4.png" alt="" />
+                                        </div>
+                                        <div class="item">
+                                                <img src="media/images/portfolio/5.png" alt="" />
+                                        </div>
+                                        <div class="item">
+                                                <img src="media/images/portfolio/6.png" alt="" />
+                                        </div>
+                                        <div class="item">
+                                                <img src="media/images/portfolio/7.png" alt="" />
+                                        </div>
+                                </div>
+
+
+
+                                <script type="text/javascript">
+                                        jQuery(document).ready(function($){
+                                                $('.portfolio-page-carousel').imagesLoaded(function(){
+                                                        $('.portfolio-page-carousel').owlCarousel({
+                                                                smartSpeed:1200,
+                                                                items: 1,
+                                                                loop: true,
+                                                                dots: true,
+                                                                nav: true,
+                                                                navText: false,
+                                                                margin: 10,
+                                                                autoHeight:true
+                                                        });
+                                                });
+                                        });
+                                </script>
+                        </div>
+
+                        <div class="col-sm-4 col-md-4 portfolio-block">
+                                <!-- Project Description -->
+                                <div class="project-description">
+                                        <div class="block-title">
+                                                <h3>Descripción</h3>
+                                        </div>
+                                        <ul class="project-general-info">
+                                                <li><p><i class="fa fa-user"></i> Alan García</p></li>
+                                                <li><p><i class="fa fa-globe"></i> <a href="#" target="_blank">www.moovax.net</a></p></li>
+                                                <li><p><i class="fa fa-calendar"></i> 01 diciembre, 2012</p></li>
+                                        </ul>
+
+                                        <p class="text-justify">Se continúa con el formato de Red Social de Contenidos, rediseñando completamente el sitio y convirtiendo los posts en <b>entradas</b>, similares a la de los blogs. Se añade la posibilidad de publicar mensajes cortos públicos como en Twitter, filtrando por general, mensajes de usuarios que sigo y los más destacados. </p>
+                                        <p class="text-justify">Los perfiles se rediseñaron de tal manera de destacar los mensajes cortos por sobre las entradas, pudiéndose visualizar de una mejor manera también las fotos y videos añadidas por los usuarios.</p>
+                                        <div class="tags-block">
+                                                <div class="block-title">
+                                                        <h3>Tecnología</h3>
+                                                </div>
+                                                <ul class="tags">
+                                                        <li><a>HTML</a></li>
+                                                        <li><a>CSS</a></li>
+                                                        <li><a>jQuery</a></li>
+                                                        <li><a>Ajax</a></li>
+                                                        <li><a>PHP6</a></li>
+                                                </ul>
+                                        </div>
+
+                                        <div class="btn-group share-buttons">
+                                                <div class="block-title">
+                                                        <h3>Share</h3>
+                                                </div>
+                                                <a href="#" target="_blank" class="btn"><i class="fab fa-facebook-f"></i> </a>
+                                                <a href="#" target="_blank" class="btn"><i class="fab fa-twitter"></i> </a>
+                                                <a href="#" target="_blank" class="btn"><i class="fab fa-dribbble"></i> </a>
+                                        </div>
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>

@@ -1,0 +1,88 @@
+<div id="ajax-page" class="ajax-page-content">
+        <div class="ajax-page-wrapper">
+                <div class="ajax-page-nav">
+                        <div class="nav-item ajax-page-prev-next">
+                                <a class="ajax-page-load" href="portfolio-4.html"><i class="lnr lnr-chevron-left"></i></a>
+                                <a class="ajax-page-load" href="portfolio-6.html"><i class="lnr lnr-chevron-right"></i></a>
+                        </div>
+                        <div class="nav-item ajax-page-close-button">
+                                <a id="ajax-page-close-button" href="#"><i class="lnr lnr-cross"></i></a>
+                        </div>
+                </div>
+
+                <div class="ajax-page-title">
+                        <h1>Distribuidora Austral</h1>
+                </div>
+
+                <div class="row">
+                        <div class="col-sm-8 col-md-8 portfolio-block">
+                                <div class="owl-carousel portfolio-page-carousel">
+                                        <div class="item">
+                                                <img src="media/images/portfolio/19.png" alt="" />
+                                        </div>
+                                        <div class="item">
+                                                <img src="media/images/portfolio/21.png" alt="" />
+                                        </div>
+                                         <div class="item">
+                                                <img src="media/images/portfolio/22.png" alt="" />
+                                        </div>
+                                        <div class="item">
+                                                <img src="media/images/portfolio/23.png" alt="" />
+                                        </div>
+                                </div>
+
+
+
+                                <script type="text/javascript">
+                                        jQuery(document).ready(function($){
+                                                $('.portfolio-page-carousel').imagesLoaded(function(){
+                                                        $('.portfolio-page-carousel').owlCarousel({
+                                                                smartSpeed:1200,
+                                                                items: 1,
+                                                                loop: true,
+                                                                dots: true,
+                                                                nav: true,
+                                                                navText: false,
+                                                                margin: 10,
+                                                                autoHeight:true
+                                                        });
+                                                });
+                                        });
+                                </script>
+                        </div>
+
+                        <div class="col-sm-4 col-md-4 portfolio-block">
+                                <!-- Project Description -->
+                                <div class="project-description">
+                                        <div class="block-title">
+                                                <h3>Descripción</h3>
+                                        </div>
+                                        <ul class="project-general-info">
+                                                <li><p><i class="fa fa-user"></i> Alan García</p></li>
+                                                <li><p><i class="fa fa-calendar"></i>Oct, 2022</p></li>
+                                        </ul>
+
+                                        <p class="text-justify">Sistema de control de stock y ventas hecho a medida.</p>
+                                        <p class="text-justify">El sistema brinda la posibilidad de cargar clientes, stock de productos con precios diferenciados según dos regiones distintas. De todos los datos que se cargan, se pueden generar reportes automáticos e instantáneos en PDF y Excel.</p>
+                                        <p class="text-justify">Se puede llevar control de vencimientos de productos, generar promociones de combos de productos, realizar ventas a créditos, apartados de productos para cualquier fecha en un calendario dispuesto para ello.</p>
+                                        <p class="text-justify">Hay dos tipos de usuarios: vendedores y administradores. Cada usuario puede personalizar el sitio a su gusto, incluyendo tema oscuro y distintas paletas de colores.</p>
+                                        <p class="text-justify">Cada vendedor posee una caja asignada, la cual puede abrirla y cerrarla al final del día, generando un arqueo automatizado y un posterior reporte de todas las ventas realizadas.</p>
+
+                                        <div class="tags-block">
+                                                <div class="block-title">
+                                                        <h3>Tecnología</h3>
+                                                </div>
+                                                <ul class="tags">
+                                                    <li><a>Bootstrap</a></li>
+                                                        <li><a>jQuery</a></li>
+                                                        <li><a>Ajax</a></li>
+                                                        <li><a>Fetch API</a></li>
+                                                        <li><a>PHP8</a></li>
+                                                </ul>
+                                        </div>
+
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
