@@ -1,0 +1,93 @@
+@media(max-width: 991px) {
+    .br_md_none br {
+        display: none;
+    }
+    /* section 3 */
+    .industry_grid_wrapper {
+        justify-content: center;
+    }
+    
+    .industry_grid_item {
+        width: 30%;
+    }
+}
+
+@media(max-width: 767px){
+    .br_md_none > br{
+        display: none !important;
+    }
+
+    /* header */
+    #header{
+        background: url("../img/page-bg.png") no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 80vh;
+        max-height: 600px;
+        display: flex;
+    }
+    #header #offcanvas{
+        background: #3a66aea6;
+    }
+
+    #header #offcanvas ul,
+    #header #offcanvas ul li,
+    #header #offcanvas ul a{
+        text-align: center;
+        width: 100%;
+    }
+    #header #offcanvas ul li{
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    #header #offcanvas ul a::after{
+        display: none;
+    }
+
+    /* contact-us */
+    .brand_logos a img{
+        max-height: 50px;
+    }
+
+    .industry_grid_item {
+        width: 45%;
+    }
+}
+
+@media(max-width: 576px){
+    /* header */
+    #header {
+        height: 70vh;
+        max-height: 550px;
+    }
+
+    /* contact-us */
+    .brand_logos a img{
+        max-height: 40px;
+    }
+    .contact_us_logo img {
+        max-width: 200px;
+    }
+
+    .sec2_grid .top {
+        height: 180px;
+    }
+
+    /* section 3 */
+    .industry_grid_wrapper {
+        gap: 20px;
+    }
+    .industry_grid_item {
+        width: 95%;
+    }
+}
+
+@media(max-width: 480px){
+    .page4_txt .col-2{
+        display: none;
+    }
+    .page4_txt .col-10{
+        width: 100%;
+    }
+    
+}
