@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Querés ser mi novia?</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: white;
+            padding: 20px;
+        }
+        #inicio { background: #6a1b9a; }
+        #historia { background: #8e24aa; }
+        #pregunta { background: #ab47bc; }
+        .btn {
+            background: white;
+            color: #7b1fa2;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #e1bee7;
+        }
+        .gallery {
+            display: flex;
+            gap: 15px;
+        }
+        .gallery img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border: 10px solid white;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            transform: rotate(-5deg);
+        }
+        .gallery img:nth-child(even) {
+            transform: rotate(5deg);
+        }
+        #fadee {
+            opacity: 0;
+            transition: opacity 2s ease-in;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="inicio" class="section">
+        <h1>Así somos juntos 💜</h1>
+        <div class="gallery">
+            <img src="foto1.jpg" alt="Foto juntos">
+            <img src="foto2.jpg" alt="Foto juntos">
+            <img src="foto3.jpg" alt="Foto juntos">
+            <img src="foto4.jpg" alt="Foto juntos">
+        </div>
+    </div>
+    
+    <div id="historia" class="section">
+        <h1>Cada momento al lado tuyo es especial</h1>
+        <p>Y quiero que sigamos compartiendo muchos más</p>
+        <p>Estar al lado tuyo y ser parte de tu vida. Acompañarte en cada paso y cada vez que nos necesitemos.</p>
+    </div>
+    
+    
+    <div id="pregunta" class="section">
+        <h1>Me queda una sola cosa por preguntarte...</h1>
+        <h1 id="fadee">¿Querés ser mi novia?</h1>
+        <button class="btn" onclick="window.location.href='https://www.youtube.com/watch?v=aKpbPUv6mpY'">Sí 💜</button>
+        <button class="btn" onclick="window.location.href='https://www.youtube.com/watch?v=aKpbPUv6mpY'">Obvio 💕</button>
+        <button class="btn" onclick="window.location.href='https://www.youtube.com/watch?v=aKpbPUv6mpY'">Te dije que no ibas a tener otra opción</button>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            let sections = $('.section');
+            let currentIndex = 0;
+            let touchStartY = 0;
+            let touchEndY = 0;
+
+            function goToSection(index) {
+                if (index >= 0 && index < sections.length) {
+                    $('html, body').animate({
+                        scrollTop: $(sections[index]).offset().top
+                    }, 500);
+                    currentIndex = index;
+                }
+            }
+
+            $(document).on('wheel', function(event) {
+                if (event.originalEvent.deltaY > 0) {
+                    goToSection(currentIndex + 1);
+                } else {
+                    goToSection(currentIndex - 1);
+                }
+            });
+
+            $(document).on('keydown', function(event) {
+                if (event.key === 'ArrowDown') {
+                    goToSection(currentIndex + 1);
+                } else if (event.key === 'ArrowUp') {
+                    goToSection(currentIndex - 1);
+                }
+            });
+
+            $(document).on('touchstart', function(event) {
+                touchStartY = event.touches[0].clientY;
+            });
+
+            $(document).on('touchend', function(event) {
+                touchEndY = event.changedTouches[0].clientY;
+                let swipeDistance = touchStartY - touchEndY;
+                
+                if (swipeDistance > 50) { // Swipe hacia arriba
+                    goToSection(currentIndex + 1);
+                } else if (swipeDistance < -50) { // Swipe hacia abajo
+                    goToSection(currentIndex - 1);
+                }
+            });
+
+            setTimeout(function() {
+                $('#fadee').css('opacity', '1');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
