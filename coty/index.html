@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Querés ser mi novia?</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         body {
@@ -40,11 +39,14 @@
         }
         .gallery {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 15px;
+            padding: 10px;
         }
         .gallery img {
-            width: 150px;
-            height: 200px;
+            width: 100px;
+            height: 150px;
             object-fit: cover;
             border: 10px solid white;
             box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
@@ -52,6 +54,12 @@
         }
         .gallery img:nth-child(even) {
             transform: rotate(5deg);
+        }
+        @media (min-width: 600px) {
+            .gallery img {
+                width: 150px;
+                height: 200px;
+            }
         }
         #fadee {
             opacity: 0;
@@ -72,18 +80,17 @@
     </div>
     
     <div id="historia" class="section">
-        <h1>Cada momento al lado tuyo es especial</h1>
-        <p>Y quiero que sigamos compartiendo muchos más</p>
-        <p>Estar al lado tuyo y ser parte de tu vida. Acompañarte en cada paso y cada vez que nos necesitemos.</p>
+        <h1>Un día todo cambió...</h1>
+        <p>No sé cómo, pero cada momento a tu lado se volvió especial.</p>
+        <p>Y sin darme cuenta, me di cuenta: quiero compartir muchos más.</p>
     </div>
     
-    
     <div id="pregunta" class="section">
-        <h1>Me queda una sola cosa por preguntarte...</h1>
+        <h1>Entonces, solo queda una pregunta...</h1>
         <h1 id="fadee">¿Querés ser mi novia?</h1>
-        <button class="btn" onclick="window.location.href='https://www.youtube.com/watch?v=aKpbPUv6mpY'">Sí 💜</button>
-        <button class="btn" onclick="window.location.href='https://www.youtube.com/watch?v=aKpbPUv6mpY'">Obvio 💕</button>
-        <button class="btn" onclick="window.location.href='https://www.youtube.com/watch?v=aKpbPUv6mpY'">Te dije que no ibas a tener otra opción</button>
+        <button class="btn" onclick="window.location.href='https://tu-url-de-confirmacion.com'">Sí, obvio 💜</button>
+        <button class="btn" onclick="window.location.href='https://tu-url-de-confirmacion.com'">¡Por supuesto! 💕</button>
+        <button class="btn" onclick="window.location.href='https://tu-url-de-confirmacion.com'">Obvio que sí, ¿qué pensabas? 😍</button>
     </div>
     
     <script>
