@@ -104,7 +104,12 @@
             let currentIndex = 0;
             let touchStartY = 0;
             let touchEndY = 0;
-
+            
+window.onload = function() {
+    setTimeout(() => {
+        window.scrollTo(0, 1);
+    }, 100);
+};
             function goToSection(index) {
                 if (index >= 0 && index < sections.length) {
                     window.scrollTo({
