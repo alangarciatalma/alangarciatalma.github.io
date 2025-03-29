@@ -9,11 +9,10 @@
             margin: 0;
             font-family: Arial, sans-serif;
             text-align: center;
-            overflow-y: auto;
-            scroll-behavior: smooth;
+            overflow: hidden;
         }
         .section {
-            height: 100dvh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -71,7 +70,7 @@
 <body>
     
     <div id="inicio" class="section">
-        <h1>Así somos juntos 💜</h1>
+        <h1>Esto somos 💜</h1>
         <div class="gallery">
             <img src="foto1.jpg" alt="Foto juntos">
             <img src="foto2.jpg" alt="Foto juntos">
@@ -81,21 +80,66 @@
     </div>
     
     <div id="historia" class="section">
-        <h1>Un día todo cambió...</h1>
-        <p>No sé cómo, pero cada momento a tu lado se volvió especial.</p>
-        <p>Y sin darme cuenta, me di cuenta: quiero compartir muchos más.</p>
+        <h1>Cada momento al lado tuyo es especial</h1>
+        <p>Y quiero que sigamos compartiendo muchos más</p>
+        <p>Estar al lado tuyo y ser parte de tu vida. Acompañarte en cada paso y cada vez que nos necesitemos.</p>
     </div>
     
     <div id="pregunta" class="section">
         <h1>Entonces, solo queda una pregunta...</h1>
         <h1 id="fadee">¿Querés ser mi novia?</h1>
-        <button class="btn" onclick="window.location.href='https://tu-url-de-confirmacion.com'">Sí, obvio 💜</button>
-        <button class="btn" onclick="window.location.href='https://tu-url-de-confirmacion.com'">¡Por supuesto! 💕</button>
-        <button class="btn" onclick="window.location.href='https://tu-url-de-confirmacion.com'">Obvio que sí, ¿qué pensabas? 😍</button>
+        <button class="btn" onclick="window.location.href='https://www.youtube.com/watch?v=aKpbPUv6mpY'">Sí 💜</button>
+        <button class="btn" onclick="window.location.href='https://www.youtube.com/watch?v=aKpbPUv6mpY'">Obvio 💕</button>
+        <button class="btn" onclick="window.location.href='https://www.youtube.com/watch?v=aKpbPUv6mpY'">Te dije que no ibas a tener otra opción</button>
     </div>
     
     <script>
         $(document).ready(function(){
+            let sections = $('.section');
+            let currentIndex = 0;
+            let touchStartY = 0;
+            let touchEndY = 0;
+
+            function goToSection(index) {
+                if (index >= 0 && index < sections.length) {
+                    $('html, body').animate({
+                        scrollTop: $(sections[index]).offset().top
+                    }, 500);
+                    currentIndex = index;
+                }
+            }
+
+            $(document).on('wheel', function(event) {
+                if (event.originalEvent.deltaY > 0) {
+                    goToSection(currentIndex + 1);
+                } else {
+                    goToSection(currentIndex - 1);
+                }
+            });
+
+            $(document).on('keydown', function(event) {
+                if (event.key === 'ArrowDown') {
+                    goToSection(currentIndex + 1);
+                } else if (event.key === 'ArrowUp') {
+                    goToSection(currentIndex - 1);
+                }
+            });
+
+            $(document).on('touchstart', function(event) {
+                touchStartY = event.touches[0].clientY;
+            });
+
+            $(document).on('touchend', function(event) {
+                touchEndY = event.changedTouches[0].clientY;
+                let swipeDistance = touchStartY - touchEndY;
+                
+                if (swipeDistance > 50) { // Swipe hacia arriba
+                    goToSection(currentIndex + 1);
+                } else if (swipeDistance < -50) { // Swipe hacia abajo
+                    goToSection(currentIndex - 1);
+                }
+            });
+
             setTimeout(function() {
                 $('#fadee').css('opacity', '1');
             }, 2000);
