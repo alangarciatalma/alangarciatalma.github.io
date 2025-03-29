@@ -102,9 +102,10 @@
 
             function goToSection(index) {
                 if (index >= 0 && index < sections.length) {
-                    $('html, body').animate({
-                        scrollTop: $(sections[index]).offset().top
-                    }, 500);
+                    window.scrollTo({
+                        top: sections[index].offsetTop,
+                        behavior: 'smooth'
+                    });
                     currentIndex = index;
                 }
             }
