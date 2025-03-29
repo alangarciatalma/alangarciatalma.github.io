@@ -1,4 +1,4 @@
- s<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -9,10 +9,11 @@
             margin: 0;
             font-family: Arial, sans-serif;
             text-align: center;
-            overflow: hidden;
+            overflow-y: auto;
+            scroll-behavior: smooth;
         }
         .section {
-            height: 100vh;
+            height: 100dvh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -70,7 +71,7 @@
 <body>
     
     <div id="inicio" class="section">
-        <h1>Esto somos 💜</h1>
+        <h1>Así somos juntos 💜</h1>
         <div class="gallery">
             <img src="foto1.jpg" alt="Foto juntos">
             <img src="foto2.jpg" alt="Foto juntos">
@@ -95,51 +96,6 @@
     
     <script>
         $(document).ready(function(){
-            let sections = $('.section');
-            let currentIndex = 0;
-            let touchStartY = 0;
-            let touchEndY = 0;
-
-            function goToSection(index) {
-                if (index >= 0 && index < sections.length) {
-                    $('html, body').animate({
-                        scrollTop: $(sections[index]).offset().top
-                    }, 500);
-                    currentIndex = index;
-                }
-            }
-
-            $(document).on('wheel', function(event) {
-                if (event.originalEvent.deltaY > 0) {
-                    goToSection(currentIndex + 1);
-                } else {
-                    goToSection(currentIndex - 1);
-                }
-            });
-
-            $(document).on('keydown', function(event) {
-                if (event.key === 'ArrowDown') {
-                    goToSection(currentIndex + 1);
-                } else if (event.key === 'ArrowUp') {
-                    goToSection(currentIndex - 1);
-                }
-            });
-
-            $(document).on('touchstart', function(event) {
-                touchStartY = event.touches[0].clientY;
-            });
-
-            $(document).on('touchend', function(event) {
-                touchEndY = event.changedTouches[0].clientY;
-                let swipeDistance = touchStartY - touchEndY;
-                
-                if (swipeDistance > 50) { // Swipe hacia arriba
-                    goToSection(currentIndex + 1);
-                } else if (swipeDistance < -50) { // Swipe hacia abajo
-                    goToSection(currentIndex - 1);
-                }
-            });
-
             setTimeout(function() {
                 $('#fadee').css('opacity', '1');
             }, 2000);
